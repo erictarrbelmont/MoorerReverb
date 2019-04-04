@@ -95,8 +95,7 @@ void MoorerReverbAudioProcessor::changeProgramName (int index, const String& new
 //==============================================================================
 void MoorerReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    apf.setFs(sampleRate);
 }
 
 void MoorerReverbAudioProcessor::releaseResources()
