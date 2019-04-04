@@ -5,17 +5,9 @@
 	};
 	objectVersion = 46;
 	objects = {
-		70CF75E8060AF5D08A2E1247 = {
-			isa = PBXBuildFile;
-			fileRef = 1A7918CDB58FE0EA5BDED292;
-		};
 		2CDFA9947F0BAAAD6713A5A1 = {
 			isa = PBXBuildFile;
 			fileRef = 21B4795C3A203DA8FEB23DC6;
-		};
-		75C7E4E22078119E27F7AB1E = {
-			isa = PBXBuildFile;
-			fileRef = 4F672B21DCDC3A6FB48D4CE7;
 		};
 		C6C692365806F0CCAF75A75A = {
 			isa = PBXBuildFile;
@@ -109,10 +101,6 @@
 			isa = PBXBuildFile;
 			fileRef = 6996405759B2642B9FB0707D;
 		};
-		18C732F27D2B9B08D9354DCD = {
-			isa = PBXBuildFile;
-			fileRef = F3AD1CF56B4AED87F6C0B64C;
-		};
 		6DE56AA38EDC82B804939EDB = {
 			isa = PBXBuildFile;
 			fileRef = 8582435A5E46B8994EED4821;
@@ -120,10 +108,6 @@
 		598932DFE270ABD5BACAA5DD = {
 			isa = PBXBuildFile;
 			fileRef = D314C6EFFA59FC05434C4CB8;
-		};
-		D184E1CDFE1C7DB84814D5C3 = {
-			isa = PBXBuildFile;
-			fileRef = 17492DB894037EB43B667F1D;
 		};
 		151ED2942E7CEF99006CFBC1 = {
 			isa = PBXBuildFile;
@@ -165,39 +149,11 @@
 			isa = PBXBuildFile;
 			fileRef = 53E258EDB27CF4ABE8522091;
 		};
-		05A3E036CA3AEBB462444C91 = {
-			isa = PBXFileReference;
-			lastKnownFileType = file.nib;
-			name = RecentFilesMenuTemplate.nib;
-			path = RecentFilesMenuTemplate.nib;
-			sourceTree = "SOURCE_ROOT";
-		};
-		1A5A7A85C74B248A821D6E55 = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = Cocoa.framework;
-			path = System/Library/Frameworks/Cocoa.framework;
-			sourceTree = SDKROOT;
-		};
-		1A7918CDB58FE0EA5BDED292 = {
-			isa = PBXFileReference;
-			explicitFileType = wrapper.cfbundle;
-			includeInIndex = 0;
-			path = MoorerReverb.vst3;
-			sourceTree = "BUILT_PRODUCTS_DIR";
-		};
 		21B4795C3A203DA8FEB23DC6 = {
 			isa = PBXFileReference;
 			explicitFileType = wrapper.cfbundle;
 			includeInIndex = 0;
 			path = MoorerReverb.component;
-			sourceTree = "BUILT_PRODUCTS_DIR";
-		};
-		4F672B21DCDC3A6FB48D4CE7 = {
-			isa = PBXFileReference;
-			explicitFileType = wrapper.application;
-			includeInIndex = 0;
-			path = MoorerReverb.app;
 			sourceTree = "BUILT_PRODUCTS_DIR";
 		};
 		0207197A0E674492F0C109D0 = {
@@ -207,11 +163,11 @@
 			path = libMoorerReverb.a;
 			sourceTree = "BUILT_PRODUCTS_DIR";
 		};
-		0D352E958065916B8B8E260B = {
+		05A3E036CA3AEBB462444C91 = {
 			isa = PBXFileReference;
-			lastKnownFileType = text.plist.xml;
-			name = "Info-Standalone_Plugin.plist";
-			path = "Info-Standalone_Plugin.plist";
+			lastKnownFileType = file.nib;
+			name = RecentFilesMenuTemplate.nib;
+			path = RecentFilesMenuTemplate.nib;
 			sourceTree = "SOURCE_ROOT";
 		};
 		10F8654F21562FACFE0EE23E = {
@@ -228,13 +184,6 @@
 			path = ../../Source/PluginProcessor.h;
 			sourceTree = "SOURCE_ROOT";
 		};
-		17492DB894037EB43B667F1D = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = "include_juce_audio_plugin_client_VST3.cpp";
-			path = "../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp";
-			sourceTree = "SOURCE_ROOT";
-		};
 		1773B8F12C8437AD8F4404AB = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -242,18 +191,18 @@
 			path = "~/JUCE/modules/juce_audio_utils";
 			sourceTree = "<absolute>";
 		};
+		1A5A7A85C74B248A821D6E55 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = System/Library/Frameworks/Cocoa.framework;
+			sourceTree = SDKROOT;
+		};
 		1DA5C6BCCA8D32A93293E25C = {
 			isa = PBXFileReference;
 			lastKnownFileType = text.plist.xml;
 			name = MoorerReverb.entitlements;
 			path = MoorerReverb.entitlements;
-			sourceTree = "SOURCE_ROOT";
-		};
-		1F6CDB9C89BF22104E8E1302 = {
-			isa = PBXFileReference;
-			lastKnownFileType = text.plist.xml;
-			name = "Info-VST3.plist";
-			path = "Info-VST3.plist";
 			sourceTree = "SOURCE_ROOT";
 		};
 		248BDA2DCD815FF80B7276CA = {
@@ -585,13 +534,6 @@
 			path = ../../JuceLibraryCode/AppConfig.h;
 			sourceTree = "SOURCE_ROOT";
 		};
-		F3AD1CF56B4AED87F6C0B64C = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = "include_juce_audio_plugin_client_Standalone.cpp";
-			path = "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp";
-			sourceTree = "SOURCE_ROOT";
-		};
 		F840973D966510257A258DD7 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -649,10 +591,8 @@
 				E437A5A16CDC764CACC69A4B,
 				928F2F320DC9D5C9E35D279E,
 				6996405759B2642B9FB0707D,
-				F3AD1CF56B4AED87F6C0B64C,
 				8582435A5E46B8994EED4821,
 				D314C6EFFA59FC05434C4CB8,
-				17492DB894037EB43B667F1D,
 				8E7DF77BF8EA7F2154DE4381,
 				10F8654F21562FACFE0EE23E,
 				B4837BA54328181AA5E4267E,
@@ -671,9 +611,7 @@
 		F28A3257ECC7569A82E5E5BC = {
 			isa = PBXGroup;
 			children = (
-				1F6CDB9C89BF22104E8E1302,
 				7D5DCD8C044F056BD8C347CB,
-				0D352E958065916B8B8E260B,
 				05A3E036CA3AEBB462444C91,
 			);
 			name = Resources;
@@ -702,9 +640,7 @@
 		9487739892C613D40379BA28 = {
 			isa = PBXGroup;
 			children = (
-				1A7918CDB58FE0EA5BDED292,
 				21B4795C3A203DA8FEB23DC6,
-				4F672B21DCDC3A6FB48D4CE7,
 				0207197A0E674492F0C109D0,
 			);
 			name = Products;
@@ -738,111 +674,10 @@
 			};
 			name = Release;
 		};
-		089FA35FA2C9282A7B1FD26C = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				COPY_PHASE_STRIP = NO;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_DEBUG=1",
-					"DEBUG=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
-					"JucePlugin_Build_Unity=0",
-				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
-					"../../JuceLibraryCode",
-					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-VST3.plist;
-				INFOPLIST_PREPROCESS = NO;
-				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_LDFLAGS = "-bundle -lMoorerReverb";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MoorerReverb;
-				PRODUCT_NAME = "MoorerReverb";
-				USE_HEADERMAP = NO;
-				WRAPPER_EXTENSION = vst3;
-			};
-			name = Debug;
-		};
-		BE349334C5A337C3694CAAB0 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				DEAD_CODE_STRIPPING = YES;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
-					"JucePlugin_Build_Unity=0",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
-					"../../JuceLibraryCode",
-					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-VST3.plist;
-				INFOPLIST_PREPROCESS = NO;
-				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
-				LIBRARY_STYLE = Bundle;
-				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_LDFLAGS = "-bundle -lMoorerReverb";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MoorerReverb;
-				PRODUCT_NAME = "MoorerReverb";
-				USE_HEADERMAP = NO;
-				WRAPPER_EXTENSION = vst3;
-			};
-			name = Release;
-		};
 		76B9AA03B567E7E4F8343BBD = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
@@ -871,7 +706,6 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
 					"../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
 					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
@@ -894,6 +728,7 @@
 		ADCBFA16B9DDB17F7E56A527 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
@@ -923,7 +758,6 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
 					"../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
 					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
@@ -944,99 +778,10 @@
 			};
 			name = Release;
 		};
-		E01554B5A5F98002A891B9B3 = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_DEBUG=1",
-					"DEBUG=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=0",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
-					"JucePlugin_Build_Unity=0",
-				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
-					"../../JuceLibraryCode",
-					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
-				INFOPLIST_PREPROCESS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_LDFLAGS = "-lMoorerReverb";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MoorerReverb;
-				PRODUCT_NAME = "MoorerReverb";
-				USE_HEADERMAP = NO;
-			};
-			name = Debug;
-		};
-		8746DD5EAD450113E38CEC5F = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				DEAD_CODE_STRIPPING = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=0",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
-					"JucePlugin_Build_Unity=0",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
-					"../../JuceLibraryCode",
-					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
-				INFOPLIST_PREPROCESS = NO;
-				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_LDFLAGS = "-lMoorerReverb";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MoorerReverb;
-				PRODUCT_NAME = "MoorerReverb";
-				USE_HEADERMAP = NO;
-			};
-			name = Release;
-		};
 		FD01DF979165FD99D6C1CFFF = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
@@ -1052,18 +797,17 @@
 					"JUCE_APP_VERSION=1.0.0",
 					"JUCE_APP_VERSION_HEX=0x10000",
 					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
+					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
 					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
+					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
 					"JUCE_SHARED_CODE=1",
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
 					"../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
 					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
@@ -1081,6 +825,7 @@
 		4E606DEFF717268451C72C0A = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
@@ -1096,19 +841,18 @@
 					"JUCE_APP_VERSION=1.0.0",
 					"JUCE_APP_VERSION_HEX=0x10000",
 					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
+					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
 					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
+					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
 					"JUCE_SHARED_CODE=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
-					"\"$(HOME)/SDKs/VST3 SDK\"",
 					"../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
 					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
@@ -1163,7 +907,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "MoorerReverb";
 				WARNING_CFLAGS = "-Wreorder";
 				ZERO_LINK = NO;
@@ -1214,17 +957,9 @@
 			};
 			name = Release;
 		};
-		B6F31DE8430B720A85ED3445 = {
-			isa = PBXTargetDependency;
-			target = A3936E2CDB8E3305808E3CA0;
-		};
 		2AE65F504FEFDCD2A7D71410 = {
 			isa = PBXTargetDependency;
 			target = D1CA356FFB52453101F35A45;
-		};
-		5D3B2FD5C811E46B9B028094 = {
-			isa = PBXTargetDependency;
-			target = FE25D94AC63B881953679B14;
 		};
 		A68D930F50967C0C2041FF91 = {
 			isa = PBXTargetDependency;
@@ -1254,73 +989,11 @@
 			buildPhases = ( );
 			buildRules = ( );
 			dependencies = (
-				B6F31DE8430B720A85ED3445,
 				2AE65F504FEFDCD2A7D71410,
-				5D3B2FD5C811E46B9B028094,
 				A68D930F50967C0C2041FF91,
 			);
 			name = "MoorerReverb - All";
 			productName = MoorerReverb;
-		};
-		869D3A8FC0F9A23EBB0C1DF8 = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				089FA35FA2C9282A7B1FD26C,
-				BE349334C5A337C3694CAAB0,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		B3BC86EC765C6FDBBA15FD19 = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7226B16B74364C2969836E3,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		274A96E9CC57F08A37D05A2E = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D184E1CDFE1C7DB84814D5C3,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1181B4D044FB0CA151529941 = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				289C3B3F31E0FA36D8B35E46,
-				3CFE5CB6B6F294E571570CDF,
-				26C8054D10537C53A09F9115,
-				23F3020D98782BBC17D99625,
-				936498376D50B1F13983A697,
-				861A976F6EA07CC9737CDE5E,
-				A33E5CF079848696984B558F,
-				C5BE6001C52CC24B8ECFD9C4,
-				7063052F291D52CFD0938B20,
-				743539FFF18EE1BB50C038F8,
-				02BED4913B9CD21C30BCD640,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A3936E2CDB8E3305808E3CA0 = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 869D3A8FC0F9A23EBB0C1DF8;
-			buildPhases = (
-				B3BC86EC765C6FDBBA15FD19,
-				274A96E9CC57F08A37D05A2E,
-				1181B4D044FB0CA151529941,
-			);
-			buildRules = ( );
-			dependencies = (
-				A68D930F50967C0C2041FF91,
-			);
-			name = "MoorerReverb - VST3";
-			productName = MoorerReverb;
-			productReference = 1A7918CDB58FE0EA5BDED292;
-			productType = "com.apple.product-type.bundle";
 		};
 		BA3E8C97113F2B0B9BCEB1E4 = {
 			isa = XCConfigurationList;
@@ -1394,66 +1067,6 @@
 			productReference = 21B4795C3A203DA8FEB23DC6;
 			productType = "com.apple.product-type.bundle";
 		};
-		616C838B85FEF97645B2D60D = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E01554B5A5F98002A891B9B3,
-				8746DD5EAD450113E38CEC5F,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		B165BDBA14262CE52D13AE31 = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7226B16B74364C2969836E3,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		26AB07D4B2F387AB7D172CD6 = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18C732F27D2B9B08D9354DCD,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98A20024E320E6E69DD60387 = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				289C3B3F31E0FA36D8B35E46,
-				3CFE5CB6B6F294E571570CDF,
-				26C8054D10537C53A09F9115,
-				23F3020D98782BBC17D99625,
-				936498376D50B1F13983A697,
-				861A976F6EA07CC9737CDE5E,
-				A33E5CF079848696984B558F,
-				C5BE6001C52CC24B8ECFD9C4,
-				7063052F291D52CFD0938B20,
-				743539FFF18EE1BB50C038F8,
-				02BED4913B9CD21C30BCD640,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE25D94AC63B881953679B14 = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 616C838B85FEF97645B2D60D;
-			buildPhases = (
-				B165BDBA14262CE52D13AE31,
-				26AB07D4B2F387AB7D172CD6,
-				98A20024E320E6E69DD60387,
-			);
-			buildRules = ( );
-			dependencies = (
-				A68D930F50967C0C2041FF91,
-			);
-			name = "MoorerReverb - Standalone Plugin";
-			productName = MoorerReverb;
-			productReference = 4F672B21DCDC3A6FB48D4CE7;
-			productType = "com.apple.product-type.application";
-		};
 		F629E14CD999CFC212E496A4 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1503,13 +1116,13 @@
 		23925505D2DE213E103CB4F8 = {
 			isa = PBXProject;
 			buildConfigurationList = 2A252A6319C9416410D01611;
-			attributes = { LastUpgradeCheck = 0930; ORGANIZATIONNAME = ""; TargetAttributes = { 487280CEFBF614793D226FF7 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };A3936E2CDB8E3305808E3CA0 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };D1CA356FFB52453101F35A45 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };FE25D94AC63B881953679B14 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };4A85E84474147E0C54B52586 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; }; }; };
+			attributes = { LastUpgradeCheck = 0930; ORGANIZATIONNAME = ""; TargetAttributes = { 487280CEFBF614793D226FF7 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };D1CA356FFB52453101F35A45 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };4A85E84474147E0C54B52586 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; }; }; };
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
 			mainGroup = 1E4CABD55056B97054AF645B;
 			projectDirPath = "";
 			projectRoot = "";
-			targets = (487280CEFBF614793D226FF7, A3936E2CDB8E3305808E3CA0, D1CA356FFB52453101F35A45, FE25D94AC63B881953679B14, 4A85E84474147E0C54B52586);
+			targets = (487280CEFBF614793D226FF7, D1CA356FFB52453101F35A45, 4A85E84474147E0C54B52586);
 			knownRegions = (en, Base);
 		};
 	};
