@@ -40,13 +40,20 @@ public:
     
     float lfo();
     
+    void updateAngle();
+    float currentAngle = {0.0f};
+    
     float delay=0.0f;
+    float amp = 0.0f;
     float modAmp=0.0f;
     float freqLFO=0.0f;
-    float sinSynth(float angle);
+    float sinSynth();
 private:
-    
+    float delayBuffer[100][2]= {0.0f};
+    float getNextSample();
     float Fs = 48000.f;
+    float offset = 0.0f;
+    float angleChange = 0.0f;
     
     
     
