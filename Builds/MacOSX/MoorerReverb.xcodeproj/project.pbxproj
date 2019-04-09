@@ -69,6 +69,10 @@
 			isa = PBXBuildFile;
 			fileRef = 05A3E036CA3AEBB462444C91;
 		};
+		6D89AFA45E532BB2F7C13474 = {
+			isa = PBXBuildFile;
+			fileRef = 1C33EF3F14D8AF822BC5E03A;
+		};
 		7E22FBFD0AA6B91065B874E8 = {
 			isa = PBXBuildFile;
 			fileRef = 889BE417A1FE3B8B2004BBE8;
@@ -76,6 +80,10 @@
 		31F4629DDEAC5CBB76CEF491 = {
 			isa = PBXBuildFile;
 			fileRef = 6153735CAB916FD6A30B96EA;
+		};
+		509AC1C6A3D81561EA42256D = {
+			isa = PBXBuildFile;
+			fileRef = 66A716FC17BC32CD64B6F272;
 		};
 		B047AD5B69075255A0E83D00 = {
 			isa = PBXBuildFile;
@@ -191,6 +199,13 @@
 			path = "../../JuceLibraryCode/include_juce_audio_utils.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		12BF034B7D398394F59DD4EB = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "juce_audio_utils";
+			path = "/Users/seannewell/JUCE/modules/juce_audio_utils";
+			sourceTree = "<absolute>";
+		};
 		169C18A3A9987C4B4CEF3F92 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -204,6 +219,13 @@
 			name = Cocoa.framework;
 			path = System/Library/Frameworks/Cocoa.framework;
 			sourceTree = SDKROOT;
+		};
+		1C33EF3F14D8AF822BC5E03A = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = MoorerReverb.cpp;
+			path = ../../Source/MoorerReverb.cpp;
+			sourceTree = "SOURCE_ROOT";
 		};
 		1DA5C6BCCA8D32A93293E25C = {
 			isa = PBXFileReference;
@@ -261,11 +283,25 @@
 			path = "../../JuceLibraryCode/include_juce_gui_basics.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		4AB5E24DC30AF7D5C4189E3C = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = Delay.h;
+			path = ../../Source/Delay.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		53E258EDB27CF4ABE8522091 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
 			name = "include_juce_opengl.mm";
 			path = "../../JuceLibraryCode/include_juce_opengl.mm";
+			sourceTree = "SOURCE_ROOT";
+		};
+		554E868181F8E04FEB269FBF = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = MoorerReverb.h;
+			path = ../../Source/MoorerReverb.h;
 			sourceTree = "SOURCE_ROOT";
 		};
 		55A6E5D6557E75BE95C7F549 = {
@@ -289,6 +325,13 @@
 			path = ../../Source/PluginEditor.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
+		631E1C5B3BE6F6E5CB8821BD = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "juce_data_structures";
+			path = "/Users/seannewell/JUCE/modules/juce_data_structures";
+			sourceTree = "<absolute>";
+		};
 		64718609E73539C1CA11D50E = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -302,6 +345,13 @@
 			name = DiscRecording.framework;
 			path = System/Library/Frameworks/DiscRecording.framework;
 			sourceTree = SDKROOT;
+		};
+		66A716FC17BC32CD64B6F272 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = Delay.cpp;
+			path = ../../Source/Delay.cpp;
+			sourceTree = "SOURCE_ROOT";
 		};
 		6996405759B2642B9FB0707D = {
 			isa = PBXFileReference;
@@ -373,6 +423,20 @@
 			path = "../../JuceLibraryCode/include_juce_audio_processors.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		8F963F47F88315342AAE84B7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "juce_core";
+			path = "/Users/seannewell/JUCE/modules/juce_core";
+			sourceTree = "<absolute>";
+		};
+		91521AC097068AEA76215D2B = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "juce_audio_plugin_client";
+			path = "/Users/seannewell/JUCE/modules/juce_audio_plugin_client";
+			sourceTree = "<absolute>";
+		};
 		928F2F320DC9D5C9E35D279E = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -408,6 +472,7 @@
 			path = "../../JuceLibraryCode/include_juce_cryptography.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+
 		A903A856B948789F1B53679A = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -421,6 +486,13 @@
 			name = "juce_graphics";
 			path = "/Applications/JUCE/modules/juce_graphics";
 			sourceTree = "<absolute>";
+		};
+		A903A856B948789F1B53679A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = CoreAudio.framework;
+			path = System/Library/Frameworks/CoreAudio.framework;
+			sourceTree = SDKROOT;
 		};
 		B4837BA54328181AA5E4267E = {
 			isa = PBXFileReference;
@@ -541,13 +613,24 @@
 			path = "../../JuceLibraryCode/include_juce_audio_devices.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		F99E87667E4A2CD774B7AF23 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "juce_audio_processors";
+			path = "/Users/seannewell/JUCE/modules/juce_audio_processors";
+			sourceTree = "<absolute>";
+		};
 		F757F86A2C6CDCA657F799BF = {
 			isa = PBXGroup;
 			children = (
+				1C33EF3F14D8AF822BC5E03A,
+				554E868181F8E04FEB269FBF,
 				889BE417A1FE3B8B2004BBE8,
 				169C18A3A9987C4B4CEF3F92,
 				6153735CAB916FD6A30B96EA,
 				BA754947C09A9D66BD00A311,
+				66A716FC17BC32CD64B6F272,
+				4AB5E24DC30AF7D5C4189E3C,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -890,7 +973,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
@@ -908,7 +991,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PRODUCT_NAME = "MoorerReverb";
-				WARNING_CFLAGS = "-Wreorder";
+				WARNING_CFLAGS = -Wreorder;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -935,7 +1018,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
@@ -952,7 +1035,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PRODUCT_NAME = "MoorerReverb";
-				WARNING_CFLAGS = "-Wreorder";
+				WARNING_CFLAGS = -Wreorder;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1080,8 +1163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D89AFA45E532BB2F7C13474,
 				7E22FBFD0AA6B91065B874E8,
 				31F4629DDEAC5CBB76CEF491,
+				509AC1C6A3D81561EA42256D,
 				B047AD5B69075255A0E83D00,
 				1DF75E355768553F29FBE240,
 				5EC8C35EF2737FE726CE07B0,
@@ -1116,14 +1201,13 @@
 		23925505D2DE213E103CB4F8 = {
 			isa = PBXProject;
 			buildConfigurationList = 2A252A6319C9416410D01611;
-			attributes = { LastUpgradeCheck = 0930; ORGANIZATIONNAME = ""; TargetAttributes = { 487280CEFBF614793D226FF7 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };D1CA356FFB52453101F35A45 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };4A85E84474147E0C54B52586 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; }; }; };
+			attributes = { LastUpgradeCheck = 1010; ORGANIZATIONNAME = ""; TargetAttributes = { 487280CEFBF614793D226FF7 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };D1CA356FFB52453101F35A45 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; };4A85E84474147E0C54B52586 = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; }; }; };
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
 			mainGroup = 1E4CABD55056B97054AF645B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (487280CEFBF614793D226FF7, D1CA356FFB52453101F35A45, 4A85E84474147E0C54B52586);
-			knownRegions = (en, Base);
 		};
 	};
 	rootObject = 23925505D2DE213E103CB4F8;
