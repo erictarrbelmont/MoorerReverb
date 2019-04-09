@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="BiQWqZ" name="MoorerReverb" projectType="audioplug" jucerVersion="5.4.3"
+<JUCERPROJECT id="BiQWqZ" name="MoorerReverb" projectType="audioplug" jucerVersion="5.4.1"
               pluginFormats="buildAU">
   <MAINGROUP id="y6Z3O0" name="MoorerReverb">
     <GROUP id="{2DE3CE20-9386-93BD-8EAD-6C9FDC702848}" name="Source">

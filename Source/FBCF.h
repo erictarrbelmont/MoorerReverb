@@ -5,8 +5,8 @@
 //  Created by Mark Blackham on 4/4/19.
 //
 
-#ifndef FBCF_hpp
-#define FBCF_hpp
+#ifndef FBCF_h
+#define FBCF_h
 
 #include <stdio.h>
 
