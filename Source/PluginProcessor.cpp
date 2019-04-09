@@ -95,8 +95,7 @@ void MoorerReverbAudioProcessor::changeProgramName (int index, const String& new
 //==============================================================================
 void MoorerReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    apf.setFs(sampleRate);
 }
 
 void MoorerReverbAudioProcessor::releaseResources()
@@ -150,11 +149,14 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
-
-        // ..do something to the data...
+    for (int sample = 0; sample < buffer.getNumSamples() ; ++sample){
+        for (int channel = 0; channel < totalNumInputChannels ; ++channel){
+            float x = buffer.getWritePointer(channel)[sample];
+            
+            float y = apf.processSample(x, channel);
+            
+            buffer.getWritePointer(channel)[sample] = y;
+        }
     }
 }
 
