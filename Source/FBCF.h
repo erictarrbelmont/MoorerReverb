@@ -10,4 +10,21 @@
 
 #include <stdio.h>
 
+
+public:
+
+float processSample(float x,int channel);
+
+void setFs(float Fs);
+float getFs();
+
+void setGain(float ampdB);//float input needs to come from process block
+float getGain();
+
+void getDelayLength(); //get delay from somewhere
+float setDelayLength();
+
+
+private:
+
 #endif /* FBCF_hpp */
