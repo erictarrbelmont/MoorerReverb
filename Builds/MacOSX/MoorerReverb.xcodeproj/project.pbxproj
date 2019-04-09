@@ -234,7 +234,6 @@
 			path = MoorerReverb.entitlements;
 			sourceTree = "SOURCE_ROOT";
 		};
-
 		1EC6F4B005B7B33FC87CE3C9 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -263,7 +262,6 @@
 			path = System/Library/Frameworks/WebKit.framework;
 			sourceTree = SDKROOT;
 		};
-
 		3CC8238AB5DC060AE11FB3A1 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -418,7 +416,6 @@
 			path = ../../Source/PluginProcessor.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
-
 		8E7DF77BF8EA7F2154DE4381 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -511,7 +508,6 @@
 			path = ../../Source/PluginEditor.h;
 			sourceTree = "SOURCE_ROOT";
 		};
-
 		BD8CEA4DF04840148378B734 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
