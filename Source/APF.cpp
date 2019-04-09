@@ -31,64 +31,90 @@ void APF::setFs(float Fs){
         this->Fs = Fs;
         updateCoefficients(); // Need to update if Fs changes
     }
-    
 };
 
 float APF::getFs(){
     return Fs;
 };
 
-void APF::setFreq(float freq){
-    if (freq <= 20000.0f) {
-        if (freq >= 20.0f){
-            this->freq = freq;
-            
-            w0 = 2 * M_PI * freq/Fs; // Normalize frequency
-            alpha = sinf(w0)/(2.0f*Q); // Bandwidth/slope/resonance parameter
-            
-            updateCoefficients();
-        }
-    }
-    
+void APF::setDelaySamples(float delaySamples){
+    this->delaySamples = delaySamples;
+    updateCoefficients();
 };
 
-float APF::getFreq(){
-    return freq;
+float APF::getDelaySamples(){
+    return delaySamples;
 };
 
-void APF::setQ(float Q){
-    if (Q <= 10.0f) {
-        if (Q >= 0.1f){
-            this->Q = Q;
-            
-            alpha = sinf(w0)/(2.0f*Q); // Bandwidth/slope/resonance parameter
-            
-            updateCoefficients();
-        }
-    }
-    
+void APF::setDelayMs(float delayMs){
+    this->delayMs = delayMs;
+    updateCoefficients();
 };
 
-float APF::getQ(){
-    return Q;
+float APF::getDelayMs(){
+    return delayMs;
 };
 
-void APF::setAmpdB(float ampdB){
-    if (ampdB <= 18.0f) {
-        if (ampdB >= -18.0f){
-            this->ampdB = ampdB;
-            
-            A = powf(10.0f,ampdB/40.0f); // Linear amplitude
-            
-            updateCoefficients();
-        }
-    }
-    
+void APF::setGain(float gain){
+    this->gain = gain;
+    updateCoefficients();
 };
 
-float APF::getAmpdB(){
-    return ampdB;
+float APF::getGain(){
+    return gain;
 };
+
+//void APF::setFreq(float freq){
+//    if (freq <= 20000.0f) {
+//        if (freq >= 20.0f){
+//            this->freq = freq;
+//            
+//            w0 = 2 * M_PI * freq/Fs; // Normalize frequency
+//            alpha = sinf(w0)/(2.0f*Q); // Bandwidth/slope/resonance parameter
+//            
+//            updateCoefficients();
+//        }
+//    }
+//    
+//};
+//
+//float APF::getFreq(){
+//    return freq;
+//};
+//
+//void APF::setQ(float Q){
+//    if (Q <= 10.0f) {
+//        if (Q >= 0.1f){
+//            this->Q = Q;
+//            
+//            alpha = sinf(w0)/(2.0f*Q); // Bandwidth/slope/resonance parameter
+//            
+//            updateCoefficients();
+//        }
+//    }
+//    
+//};
+//
+//float APF::getQ(){
+//    return Q;
+//};
+//
+//void APF::setAmpdB(float ampdB){
+//    if (ampdB <= 18.0f) {
+//        if (ampdB >= -18.0f){
+//            this->ampdB = ampdB;
+//            
+//            A = powf(10.0f,ampdB/40.0f); // Linear amplitude
+//            
+//            updateCoefficients();
+//        }
+//    }
+//    
+//};
+//
+//float APF::getAmpdB(){
+//    return ampdB;
+//};
 
 void APF::updateCoefficients(){
     b0 =   1.0f - alpha;

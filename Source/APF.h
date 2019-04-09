@@ -25,14 +25,23 @@ public:
     void setFs(float Fs);
     float getFs();
     
-    void setFreq(float freq);
-    float getFreq();
-
-    void setQ(float Q);
-    float getQ();
-
-    void setAmpdB(float ampdB);
-    float getAmpdB();
+    void setDelaySamples(float delaySamples);
+    float getDelaySamples();
+    
+    void setDelayMs(float delayMs);
+    float getDelayMs();
+    
+    void setGain(float gain);
+    float getGain();
+    
+//    void setFreq(float freq);
+//    float getFreq();
+//
+//    void setQ(float Q);
+//    float getQ();
+//
+//    void setAmpdB(float ampdB);
+//    float getAmpdB();
     
 private:
     
