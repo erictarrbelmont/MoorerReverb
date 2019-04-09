@@ -11,6 +11,8 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "APF.h"
+
 
 //==============================================================================
 /**
@@ -56,6 +58,8 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
+    
+    APF apf;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MoorerReverbAudioProcessor)
 };
