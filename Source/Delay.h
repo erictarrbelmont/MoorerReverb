@@ -33,20 +33,23 @@ public:
     
     float getModAmp();
     
-   
+    
     void setFreqLFO(float f);
     
     float getFreqLFO();
     
+    float lfo();
     
-
-    
-private:
-    
-    float Fs = 48000.f;
     float delay=0.0f;
     float modAmp=0.0f;
     float freqLFO=0.0f;
+    float sinSynth(float angle);
+private:
+    
+    float Fs = 48000.f;
+    
+    
+    
     
     
 };
