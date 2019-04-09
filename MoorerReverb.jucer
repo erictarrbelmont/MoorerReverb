@@ -4,8 +4,9 @@
               pluginFormats="buildAU">
   <MAINGROUP id="y6Z3O0" name="MoorerReverb">
     <GROUP id="{2DE3CE20-9386-93BD-8EAD-6C9FDC702848}" name="Source">
-      <FILE id="gKjY2e" name="APF.cpp" compile="1" resource="0" file="Source/APF.cpp"/>
-      <FILE id="sxYh3X" name="APF.h" compile="0" resource="0" file="Source/APF.h"/>
+      <FILE id="sHv3Vb" name="MoorerReverb.cpp" compile="1" resource="0"
+            file="Source/MoorerReverb.cpp"/>
+      <FILE id="wvqlU7" name="MoorerReverb.h" compile="0" resource="0" file="Source/MoorerReverb.h"/>
       <FILE id="GCf64v" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="F9WRMX" name="PluginProcessor.h" compile="0" resource="0"
@@ -13,6 +14,8 @@
       <FILE id="c2w5S1" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="ffoo7W" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="kK7SmJ" name="Delay.cpp" compile="1" resource="0" file="Source/Delay.cpp"/>
+      <FILE id="dEbUlM" name="Delay.h" compile="0" resource="0" file="Source/Delay.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
