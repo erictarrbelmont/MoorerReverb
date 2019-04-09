@@ -15,10 +15,17 @@
 class MoorerReverb {
     
 public:
+
     
-    void setTime();
+    float processSample(float x, int channel);
     
     
+    
+    
+    // APF apf1;
+    // APF apf2;
+    // FBCF fbcf1;
+    // ER er1;
     
     
 private:

@@ -14,4 +14,13 @@
 
 
 
+float MoorerReverb::processSample(float x, int channel){
+    
+    float y = x;
+    
+    return y;
+    
+};
+
+
 #endif
