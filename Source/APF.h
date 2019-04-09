@@ -20,7 +20,6 @@ public:
     APF(){};
     ~APF(){};
     
-    // Functions for Compressor
     float processSample(float x,int channel);
     
     void setFs(float Fs);

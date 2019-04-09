@@ -11,8 +11,7 @@
 #include "APF.h"
 #include <math.h>
 
-
-float APF::processSample(float x,int channel){
+float APF::processSample(float x, int channel){
     
     // Output, processed sample (Direct Form 1)
     float y = (b0/a0)*x + (b1/a0)*x1[channel] + (b2/a0)*x2[channel] + (-a1/a0)*y1[channel] + (-a2/a0)*y2[channel];
@@ -22,10 +21,10 @@ float APF::processSample(float x,int channel){
     y2[channel] = y1[channel];
     y1[channel] = y;
     
-    return y;
+    y = y * 2;
     
+    return y;
 };
-
 
 void APF::setFs(float Fs){
     if (Fs == 44100 || Fs == 48000 || Fs == 88200 || Fs == 96000 || Fs == 192000){
@@ -34,10 +33,10 @@ void APF::setFs(float Fs){
     }
     
 };
+
 float APF::getFs(){
     return Fs;
 };
-
 
 void APF::setFreq(float freq){
     if (freq <= 20000.0f) {
@@ -52,10 +51,10 @@ void APF::setFreq(float freq){
     }
     
 };
+
 float APF::getFreq(){
     return freq;
 };
-
 
 void APF::setQ(float Q){
     if (Q <= 10.0f) {
@@ -69,6 +68,7 @@ void APF::setQ(float Q){
     }
     
 };
+
 float APF::getQ(){
     return Q;
 };
@@ -85,6 +85,7 @@ void APF::setAmpdB(float ampdB){
     }
     
 };
+
 float APF::getAmpdB(){
     return ampdB;
 };
