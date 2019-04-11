@@ -153,9 +153,9 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
         for (int channel = 0; channel < totalNumInputChannels ; ++channel){
             float x = buffer.getWritePointer(channel)[sample];
             
-            float y = apf.processSample(x, channel);
+//            float y = apf.processSample(x, channel);
             
-            buffer.getWritePointer(channel)[sample] = y;
+            buffer.getWritePointer(channel)[sample] = x;
         }
     }
 }
