@@ -10,27 +10,29 @@
 
 #include "Delay.h"
 #include <math.h>
-float processSample(float x, int channel){
+float Delay::processSample(float x, int channel){
     float y = 0;
-    float maxBufferSize[96000];
-    float index = 0;
-    int d1 = floorf(delay);
-    int d2 = d1 + 1;
+
+    float lfo = amp * sinf(currentAngle) + offset;
+    updateAngle();
+    
+    float d1 = floorf(delay + lfo);
+    float d2 = d1 + 1;
     float g2 = delay - d1;
     float g1 = 1.0f - g2;
-    
+
     int indexD1 = index - d1;
     if (indexD1 < 0){
         indexD1 += maxBufferSize;
     }
-    
+
     int indexD2 = index - d2;
     if (indexD2 < 0){
         indexD2 += maxBufferSize;
     }
-    
-    y= x + g1 * delayBuffer[indexD1][channel] + g2 * delayBuffer[indexD2][channel];
-    
+
+    y= g1 * delayBuffer[indexD1][channel] + g2 * delayBuffer[indexD2][channel];
+
     delayBuffer[index][channel] = x;
     if (index <= maxBufferSize - 2){
         index++;
@@ -50,39 +52,40 @@ float Delay::getFs(){
     return Fs;
 };
 
-void Delay::setDelayTime(float d){
-    
+void Delay::setDelaySamples(float d){
+    if (d <= maxBufferSize || d >= 0.0f){
+        delay = d;
+    }
 };
 
-float Delay::getDelayTime(){
+float Delay::getDelaySamples(){
     return delay;
 };
 
 void Delay::setModAmp(float m){
-    
+    if (m <= 10.0f || m >= 0.0f){
+        amp = m;
+        offset = amp;
+    }
 };
 
 float Delay::getModAmp(){
-    return modAmp;
+    return amp;
 };
 
 void Delay::setFreqLFO(float f){
-    
+//    condition 0.1 - 5
+    angleChange = 2 * M_PI * f/Fs;
+    freqLFO = f;
 };
 float Delay::getFreqLFO(){
     return freqLFO;
 };
-float Delay::sinSynth(float angle) {
-    
-    return sinf(angle);
+
+void Delay::updateAngle(){
+    currentAngle += angleChange;
+    if (currentAngle > 2 * M_PI){
+        currentAngle -= (2*M_PI);
+    }
 }
-float lfo(){
-    float signal = 0.0f; // variable for a sample of the signal
-    float offset = 0.0f;
-    
-    float currentAngle = 0.0f;
-    float angleChange = 0.0f;
-    
-    signal = modAmp * sinSynth(currentAngle) + offset;
-    
-}
+
