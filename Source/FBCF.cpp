@@ -14,11 +14,14 @@ public:
     ~FBCF(){};
     
     // Functions for Compressor
-    float FBCF::processSample(float x,int channel);
+    float FBCF::processSample(float x,int channel){
     
+    float w=x+-g*y1;
     //y(n)=x(n)-g*y(n - delay) use this for difference equation for FBCF
-    
-    
+        //delay.processSample(w);
+        y1=delay.processSample(w);
+        return y1;
+    }
     void FBCF::setFs(int Fs){
         // Code to check for valid sampling rate
         if (Fs == 44100 || Fs==48000 ||Fs==88200||Fs==96000||Fs==192000) {
@@ -38,7 +41,7 @@ public:
     void FBCF::setGain(float g){
         // Code to check that "d" is valid for drive
         if (g < 1.0f) {
-            if (g >= 0.1f){
+            if (g >= 0.0f){
                 gain = g;
             }
         }
@@ -52,13 +55,32 @@ public:
     };
     
     
-    void FBCF::getDelayLength(); //get delay from somewhere
+    void FBCF::setDelaySamples(float d){
+        if (d <= maxBufferSize || d >= 0.0f){
+            delayTime = d;
+            delay.setDelaySamples(d);
+        }
+    };
     
+    float FBCF::getDelaySamples(){
+        return delay;
+    };
     
-    float FBCF::setDelayLength(float d);
+    void FBCF::setRate(float r){
+        rate = r;
+        
+    }
+    float FBCF::getRate(){
+        return rate;
+        
+    }
     
-    delay=d;
-    
+    void FBCF::setDepth(float depth){
+        Depth = depth;
+    }
+    float FBCF::getDepth(){
+        return Depth;
+    }
     
 private:
     
