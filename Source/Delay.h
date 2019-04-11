@@ -24,9 +24,9 @@ public:
     float getFs();
     
     
-    void setDelayTime(float d);
+    void setDelaySamples(float d);
     
-    float getDelayTime();
+    float getDelaySamples();
     
     
     void setModAmp(float m);
@@ -40,14 +40,26 @@ public:
     
     float lfo();
     
-    float delay=0.0f;
+    void updateAngle();
+    float currentAngle = {0.0f};
+    
+    
+    float amp = 0.0f;
     float modAmp=0.0f;
     float freqLFO=0.0f;
-    float sinSynth(float angle);
+    float sinSynth();
+    
+    
 private:
-    
+    const int maxBufferSize = 96000;
+    float delayBuffer[96000][2]= {0.0f};
+    float getNextSample();
     float Fs = 48000.f;
-    
+    float offset = 0.0f;
+    float angleChange = 0.0f;
+    int index = 0;
+    float delay=0.0f;
+
     
     
     
