@@ -47,7 +47,7 @@ private:
     
     Delay delay;
     
-    float d1 = 0.0f;
+    float delaySig = 0.0f;
 };
 
 

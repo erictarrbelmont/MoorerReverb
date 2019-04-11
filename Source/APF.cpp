@@ -13,10 +13,10 @@
 
 float APF::processSample(float x, int channel){
     
-    float dIn = x + -gain * d1;
-    d1 = delay.processSample(dIn, channel);
-    
-    float y = d1 + gain * dIn;
+    float delayIn = x + (-gain * delaySig);
+    delaySig = delay.processSample(delayIn, channel);
+
+    float y = delaySig + (gain * delayIn);
     
     return y;
 };
