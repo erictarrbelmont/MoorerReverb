@@ -21,13 +21,37 @@ MoorerReverbAudioProcessor::MoorerReverbAudioProcessor()
                       #endif
                        .withOutput ("Output", AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ),
 #endif
+treeState (*this, nullptr, Identifier ("MoorerParams"), createParameterLayout() )
 {
+    
+     thisMoorerReverb = new MoorerReverb();
+    
+    reverbTimeParameter = treeState.getRawParameterValue("reverbTime");
+    frequencyParameter = treeState.getRawParameterValue("frequency");
+    modulationParameter = treeState.getRawParameterValue("modulation");
+    
 }
 
 MoorerReverbAudioProcessor::~MoorerReverbAudioProcessor()
 {
+    delete thisMoorerReverb;
+}
+
+AudioProcessorValueTreeState::ParameterLayout MoorerReverbAudioProcessor::createParameterLayout()
+{
+    std::vector <std::unique_ptr<RangedAudioParameter>> params;
+   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", -48,12,0);
+    auto freqParams = std::make_unique<AudioParameterFloat> ("frequency","Frequency",20.f,18000.f,.1);
+    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.01,20.f,.01);
+
+    params.push_back(std::move(reverbTimeParams));
+    params.push_back(std::move(freqParams));
+    params.push_back(std::move(modulationParams));
+
+    return { params.begin(), params.end() };
+    
 }
 
 //==============================================================================
@@ -135,6 +159,13 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
+    
+    auto frequency = *frequencyParameter;
+    auto reverb = *reverbTimeParameter;
+    auto modulation = *modulationParameter;
+    
+    //thisMoorerReverb->setSamplingRate(); //do we need this?
+    
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
     // guaranteed to be empty - they may contain garbage).
@@ -152,9 +183,17 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
     // interleaved by keeping the same state.
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
-        auto* channelData = buffer.getWritePointer (channel);
+        //auto* channelData = buffer.getWritePointer (channel);
+        for (int sample = 0; sample < buffer.getNumSamples(); ++sample){
+            
+            //TODO: Implement input params
+        //thisMoorerReverb->setFrequency(freqency);
+        //thisMoorerReverb->setReverbTime(reverb);
+        //thisMoorerReverb->setModulation(modulation);
+            
+        buffer.getWritePointer(channel)[sample] = thisMoorerReverb->processSample(buffer.getReadPointer(channel)[sample], channel);
 
-        // ..do something to the data...
+        }
     }
 }
 
@@ -172,6 +211,10 @@ AudioProcessorEditor* MoorerReverbAudioProcessor::createEditor()
 //==============================================================================
 void MoorerReverbAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
+    auto state = treeState.copyState();
+    std::unique_ptr<XmlElement> xml (state.createXml());
+    copyXmlToBinary (*xml, destData);
+    
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
@@ -179,6 +222,10 @@ void MoorerReverbAudioProcessor::getStateInformation (MemoryBlock& destData)
 
 void MoorerReverbAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
+    std::unique_ptr<XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
+    if (xmlState.get() != nullptr)
+        if (xmlState->hasTagName (treeState.state.getType()))
+            treeState.replaceState (ValueTree::fromXml (*xmlState));
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
 }
