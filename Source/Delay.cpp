@@ -10,11 +10,13 @@
 
 #include "Delay.h"
 #include <math.h>
-float processSample(float x, int channel){
+float Delay::processSample(float x, int channel){
     float y = 0;
-    float maxBufferSize[96000];
-    float index = 0;
-    float d1 = floorf(delay);
+
+    float lfo = amp * sinf(currentAngle) + offset;
+    updateAngle();
+    
+    float d1 = floorf(delay + lfo);
     float d2 = d1 + 1;
     float g2 = delay - d1;
     float g1 = 1.0f - g2;
@@ -29,7 +31,7 @@ float processSample(float x, int channel){
         indexD2 += maxBufferSize;
     }
 
-    y= x + g1 * delayBuffer[indexD1][channel] + g2 * delayBuffer[indexD2][channel];
+    y= g1 * delayBuffer[indexD1][channel] + g2 * delayBuffer[indexD2][channel];
 
     delayBuffer[index][channel] = x;
     if (index <= maxBufferSize - 2){
@@ -50,53 +52,40 @@ float Delay::getFs(){
     return Fs;
 };
 
-void Delay::setDelayTime(float d){
-    if (d <= 10 || d >= 0.1){
-        d = delay;
+void Delay::setDelaySamples(float d){
+    if (d <= maxBufferSize || d >= 0.0f){
+        delay = d;
     }
 };
 
-float Delay::getDelayTime(){
+float Delay::getDelaySamples(){
     return delay;
 };
 
 void Delay::setModAmp(float m){
-    if (modAmp <= 1.0f || modAmp >= 0.0f){
-        m = modAmp;
-        amp = 0.5f * modAmp;
-        offset = 1.0f - amp;
+    if (m <= 10.0f || m >= 0.0f){
+        amp = m;
+        offset = amp;
     }
 };
 
 float Delay::getModAmp(){
-    return modAmp;
+    return amp;
 };
 
 void Delay::setFreqLFO(float f){
-    
+//    condition 0.1 - 5
+    angleChange = 2 * M_PI * f/Fs;
+    freqLFO = f;
 };
 float Delay::getFreqLFO(){
     return freqLFO;
 };
-float Delay::sinSynth(){
-    float out = sinf(currentAngle);
-    updateAngle();
-    return out;
-};
-float Delay::lfo(){
-    float signal = 0.0f; // variable for a sample of the signal
-    signal = amp * sinSynth() + offset;
-}
+
 void Delay::updateAngle(){
     currentAngle += angleChange;
     if (currentAngle > 2 * M_PI){
         currentAngle -= (2*M_PI);
     }
-}
-
-float Delay::getNextSample(){
-        float lfo = 0.0f;
-            lfo = modAmp * sinSynth() + offset;
-        return lfo;
 }
 
