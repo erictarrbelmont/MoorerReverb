@@ -61,7 +61,7 @@ public:
     AudioProcessorValueTreeState treeState;
 
     float* reverbTimeParameter = nullptr;
-    float* frequencyParameter  = nullptr;
+    float* diffusionParameter  = nullptr;
     float* modulationParameter = nullptr;
     
 private:
