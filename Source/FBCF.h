@@ -27,4 +27,6 @@ float setDelayLength();
 
 private:
 
+float delay = 1.0f;
+float gain = 0.7f;
 #endif /* FBCF_hpp */

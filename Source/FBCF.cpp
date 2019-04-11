@@ -18,6 +18,7 @@ public:
     
     //y(n)=x(n)-g*y(n - delay) use this for difference equation for FBCF
     
+    
     void FBCF::setFs(int Fs){
         // Code to check for valid sampling rate
         if (Fs == 44100 || Fs==48000 ||Fs==88200||Fs==96000||Fs==192000) {
@@ -54,9 +55,9 @@ public:
     void FBCF::getDelayLength(); //get delay from somewhere
     
     
-    float FBCF::setDelayLength();
+    float FBCF::setDelayLength(float d);
     
-    
+    delay=d;
     
     
 private:
