@@ -42,12 +42,12 @@ MoorerReverbAudioProcessor::~MoorerReverbAudioProcessor()
 AudioProcessorValueTreeState::ParameterLayout MoorerReverbAudioProcessor::createParameterLayout()
 {
     std::vector <std::unique_ptr<RangedAudioParameter>> params;
-   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", -48,12,0);
-    auto diffusionParams = std::make_unique<AudioParameterFloat> ("diffusion","Diffusion",20.f,18000.f,.1);
-    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.01,20.f,.01);
+   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", 0.2,0.9,0.7);
+    auto diffusionParams = std::make_unique<AudioParameterFloat> ("diffusion","Diffusion",0.2,0.9,0.7);
+    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.2,0.9,0.7);
 
     params.push_back(std::move(reverbTimeParams));
-    params.push_back(std::move(freqParams));
+    params.push_back(std::move(diffusionParams));
     params.push_back(std::move(modulationParams));
 
     return { params.begin(), params.end() };
@@ -119,8 +119,7 @@ void MoorerReverbAudioProcessor::changeProgramName (int index, const String& new
 //==============================================================================
 void MoorerReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    thisMoorerReverb->setSamplingRate(getSampleRate());
 }
 
 void MoorerReverbAudioProcessor::releaseResources()
@@ -164,7 +163,7 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
     auto diffusion = *diffusionParameter;
     auto modulation = *modulationParameter;
     
-    //thisMoorerReverb->setSamplingRate(); //do we need this?
+    
     
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't

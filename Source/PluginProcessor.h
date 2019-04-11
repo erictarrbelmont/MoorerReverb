@@ -60,6 +60,9 @@ public:
     AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     AudioProcessorValueTreeState treeState;
 
+    AudioPlayHead* playHead;
+    AudioPlayHead::CurrentPositionInfo currentPositionInfo;
+    
     float* reverbTimeParameter = nullptr;
     float* diffusionParameter  = nullptr;
     float* modulationParameter = nullptr;
