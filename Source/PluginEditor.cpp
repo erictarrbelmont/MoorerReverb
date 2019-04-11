@@ -22,7 +22,6 @@ MoorerReverbAudioProcessorEditor::MoorerReverbAudioProcessorEditor (MoorerReverb
     //reverb time, diffusion, modulation knobs
     
     reverbTimeSlider.addListener(this);
-    //hpfSlider.setBounds(225,100,80,80);
     reverbTimeSlider.setSize(sliderSize,sliderSize);
     reverbTimeSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
     reverbTimeSlider.setRange(0, 1); // slider can have values between 0 and 1
@@ -31,15 +30,12 @@ MoorerReverbAudioProcessorEditor::MoorerReverbAudioProcessorEditor (MoorerReverb
     addAndMakeVisible(reverbTimeSlider);
     
     reverbTimeLabel.setText("Reverb Time", dontSendNotification);
-    //hpfSliderLabel(HackAudio::Fonts::NowRegular);
-    //hpfSliderLabel(juce::Label::textColourId, HackAudio::Colours::White);
     reverbTimeLabel.setJustificationType(Justification::centred);
     reverbTimeLabel.attachToComponent(&reverbTimeSlider, false);
     // 'false' is to put it on top
     addAndMakeVisible(reverbTimeLabel);
     
     diffusionSlider.addListener(this);
-    //freqSlider.setBounds(225,10,80,80);
     diffusionSlider.setSize(sliderSize,sliderSize);
     diffusionSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
     diffusionSlider.setRange(0.1f, 10.0f); // slider can have values between 0 and 1
@@ -48,15 +44,12 @@ MoorerReverbAudioProcessorEditor::MoorerReverbAudioProcessorEditor (MoorerReverb
     addAndMakeVisible(diffusionSlider);
     
     diffusionSliderLabel.setText("Diffusion", dontSendNotification);
-    //freqSliderLabel(HackAudio::Fonts::NowRegular);
-    //freqSliderLabel(juce::Label::textColourId, HackAudio::Colours::White);
     diffusionSliderLabel.setJustificationType(Justification::centred);
     diffusionSliderLabel.attachToComponent(&diffusionSlider, false);
     // 'false' is to put it on top
     addAndMakeVisible(diffusionSliderLabel);
     
     modulationSlider.addListener(this);
-    //depthSlider.setBounds(25,10,80,80);
     modulationSlider.setSize(sliderSize,sliderSize);
     modulationSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
     modulationSlider.setRange(0.0f, 1.0f); // slider can have values between 0 and 1
@@ -65,8 +58,6 @@ MoorerReverbAudioProcessorEditor::MoorerReverbAudioProcessorEditor (MoorerReverb
     addAndMakeVisible(modulationSlider);
     
     modulationSliderLabel.setText("Modulation", dontSendNotification);
-    //depthSliderLabel(HackAudio::Fonts::NowRegular);
-    //depthSliderLabel(juce::Label::textColourId, HackAudio::Colours::White);
     modulationSliderLabel.setJustificationType(Justification::centred);
     modulationSliderLabel.attachToComponent(&modulationSlider, false);
     // 'false' is to put it on top
