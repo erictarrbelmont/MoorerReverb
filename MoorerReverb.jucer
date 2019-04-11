@@ -4,8 +4,8 @@
               pluginFormats="buildAU">
   <MAINGROUP id="y6Z3O0" name="MoorerReverb">
     <GROUP id="{2DE3CE20-9386-93BD-8EAD-6C9FDC702848}" name="Source">
-      <FILE id="gKjY2e" name="APF.cpp" compile="1" resource="0" file="Source/APF.cpp"/>
-      <FILE id="sxYh3X" name="APF.h" compile="0" resource="0" file="Source/APF.h"/>
+      <FILE id="yeEfEO" name="APF.cpp" compile="1" resource="0" file="Source/APF.cpp"/>
+      <FILE id="KyF3R7" name="APF.h" compile="0" resource="0" file="Source/APF.h"/>
       <FILE id="GCf64v" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="F9WRMX" name="PluginProcessor.h" compile="0" resource="0"
