@@ -34,6 +34,11 @@ public:
     void setGain(float gain);
     float getGain();
     
+    float convertToMs(float delaySamples);
+    
+    float convertToSamples(float delayMs);
+
+    
 //    void setFreq(float freq);
 //    float getFreq();
 //
@@ -54,12 +59,11 @@ private:
     // Variables for User to Modify Filter
     float freq = 20.0f; // frequency in Hz
     float Q = 0.707f; // Q => [0.1 - 10]
-    float ampdB = 0.0f;  // Amplitude on dB scale
     
     // Intermediate Variables
     float w0 = 2 * M_PI * freq/Fs; // Normalize frequency
     float alpha = sinf(w0)/(2.0f*Q); // Bandwidth/slope/resonance parameter
-    float A = powf(10.0f,ampdB/40.0f); // Linear amplitude
+//    float A = powf(10.0f, 0.0f); // Linear amplitude
     
     // Variables for Biquad Implementation
     // 2 channels - L,R

@@ -13,7 +13,6 @@
 
 float APF::processSample(float x, int channel){
     
-    // Output, processed sample (Direct Form 1)
     float y = (b0/a0)*x + (b1/a0)*x1[channel] + (b2/a0)*x2[channel] + (-a1/a0)*y1[channel] + (-a2/a0)*y2[channel];
     
     x2[channel] = x1[channel]; // store delay samples for next process step
@@ -62,6 +61,14 @@ void APF::setGain(float gain){
 
 float APF::getGain(){
     return gain;
+};
+
+float convertToMs(float delaySamples){
+//    sampleRate =
+};
+
+float convertToSamples(float delayMs){
+    
 };
 
 //void APF::setFreq(float freq){
