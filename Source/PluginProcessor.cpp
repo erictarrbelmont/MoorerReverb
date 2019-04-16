@@ -42,9 +42,9 @@ MoorerReverbAudioProcessor::~MoorerReverbAudioProcessor()
 AudioProcessorValueTreeState::ParameterLayout MoorerReverbAudioProcessor::createParameterLayout()
 {
     std::vector <std::unique_ptr<RangedAudioParameter>> params;
-   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", 0.1,5.f,1.f);
-    auto diffusionParams = std::make_unique<AudioParameterFloat> ("diffusion","Diffusion",0.f,1.f,0.5);
-    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.f,1.f,0.5);
+   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", 0.2,0.9,0.7);
+    auto diffusionParams = std::make_unique<AudioParameterFloat> ("diffusion","Diffusion",0.2,0.9,0.7);
+    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.2,0.9,0.7);
 
     params.push_back(std::move(reverbTimeParams));
     params.push_back(std::move(diffusionParams));
