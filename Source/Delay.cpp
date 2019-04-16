@@ -74,10 +74,14 @@ float Delay::getModAmp(){
 };
 
 void Delay::setFreqLFO(float f){
-//    condition 0.1 - 5
-    angleChange = 2 * M_PI * f/Fs;
-    freqLFO = f;
+
+    if (f >= 0.1f || f <= 5){
+        angleChange = 2 * M_PI * f/Fs;
+        freqLFO = f;
+    }
+
 };
+
 float Delay::getFreqLFO(){
     return freqLFO;
 };

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="BiQWqZ" name="MoorerReverb" projectType="audioplug" jucerVersion="5.4.3"
+<JUCERPROJECT id="BiQWqZ" name="MoorerReverb" projectType="audioplug" jucerVersion="5.4.1"
               pluginFormats="buildAU">
   <MAINGROUP id="y6Z3O0" name="MoorerReverb">
     <GROUP id="{2DE3CE20-9386-93BD-8EAD-6C9FDC702848}" name="Source">
+      <FILE id="sHv3Vb" name="MoorerReverb.cpp" compile="1" resource="0"
+            file="Source/MoorerReverb.cpp"/>
+      <FILE id="wvqlU7" name="MoorerReverb.h" compile="0" resource="0" file="Source/MoorerReverb.h"/>
       <FILE id="GCf64v" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="F9WRMX" name="PluginProcessor.h" compile="0" resource="0"
