@@ -42,9 +42,9 @@ MoorerReverbAudioProcessor::~MoorerReverbAudioProcessor()
 AudioProcessorValueTreeState::ParameterLayout MoorerReverbAudioProcessor::createParameterLayout()
 {
     std::vector <std::unique_ptr<RangedAudioParameter>> params;
-   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", 0.2,0.9,0.7);
-    auto diffusionParams = std::make_unique<AudioParameterFloat> ("diffusion","Diffusion",0.2,0.9,0.7);
-    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.2,0.9,0.7);
+   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", 0.1,5.f,1.f);
+    auto diffusionParams = std::make_unique<AudioParameterFloat> ("diffusion","Diffusion",0.f,1.f,0.5);
+    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.f,1.f,0.5);
 
     params.push_back(std::move(reverbTimeParams));
     params.push_back(std::move(diffusionParams));
@@ -186,9 +186,9 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
         for (int sample = 0; sample < buffer.getNumSamples(); ++sample){
             
             //TODO: Implement input params
-        //thisMoorerReverb->setDiffusion(diffusion);
-        //thisMoorerReverb->setReverbTime(reverb);
-        //thisMoorerReverb->setModulation(modulation);
+        thisMoorerReverb->setDiffusion(diffusion);
+        thisMoorerReverb->setReverbTime(reverb);
+        thisMoorerReverb->setModulation(modulation);
             
         buffer.getWritePointer(channel)[sample] = thisMoorerReverb->processSample(buffer.getReadPointer(channel)[sample], channel);
 
