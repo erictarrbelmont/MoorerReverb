@@ -85,10 +85,6 @@
 			isa = PBXBuildFile;
 			fileRef = 66A716FC17BC32CD64B6F272;
 		};
-		FBEE31765E42CD5FD2E0492E = {
-			isa = PBXBuildFile;
-			fileRef = 33DBA6F4365D178802DF1686;
-		};
 		B047AD5B69075255A0E83D00 = {
 			isa = PBXBuildFile;
 			fileRef = 2B6C4BB96F87D46EAAFC4DB1;
@@ -244,13 +240,6 @@
 			name = WebKit.framework;
 			path = System/Library/Frameworks/WebKit.framework;
 			sourceTree = SDKROOT;
-		};
-		33DBA6F4365D178802DF1686 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.objcpp;
-			name = "include_hack_audio_gui.mm";
-			path = "../../JuceLibraryCode/include_hack_audio_gui.mm";
-			sourceTree = "SOURCE_ROOT";
 		};
 		3938549D80D560F7448CA338 = {
 			isa = PBXFileReference;
@@ -553,13 +542,6 @@
 			path = ../../JuceLibraryCode/JuceHeader.h;
 			sourceTree = "SOURCE_ROOT";
 		};
-		E70748BD5927D423AC83084A = {
-			isa = PBXFileReference;
-			lastKnownFileType = file;
-			name = "hack_audio_gui";
-			path = "/Users/Brian/Documents/JUCE Modules/hack_audio_gui";
-			sourceTree = "<absolute>";
-		};
 		E7FFF906E20E7DA7AF09D02F = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -621,7 +603,6 @@
 		9F6B9441012E1075AE0225F9 = {
 			isa = PBXGroup;
 			children = (
-				E70748BD5927D423AC83084A,
 				65E8FAC22656C4822EED042B,
 				5562F70095D4A795E383204C,
 				ADEB35500B684EAC83C021FA,
@@ -644,7 +625,6 @@
 			isa = PBXGroup;
 			children = (
 				F27B36A85D9C2FAAE937D2D0,
-				33DBA6F4365D178802DF1686,
 				2B6C4BB96F87D46EAAFC4DB1,
 				F840973D966510257A258DD7,
 				64718609E73539C1CA11D50E,
@@ -767,7 +747,6 @@
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
-					"\"/Users/Brian/Documents/JUCE Modules\"",
 					"/Users/Brian/Desktop/JUCE/modules",
 					"/Users/Brian/Desktop/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
@@ -820,7 +799,6 @@
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
-					"\"/Users/Brian/Documents/JUCE Modules\"",
 					"/Users/Brian/Desktop/JUCE/modules",
 					"/Users/Brian/Desktop/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
@@ -871,7 +849,6 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
-					"\"/Users/Brian/Documents/JUCE Modules\"",
 					"/Users/Brian/Desktop/JUCE/modules",
 					"/Users/Brian/Desktop/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
@@ -917,7 +894,6 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
-					"\"/Users/Brian/Documents/JUCE Modules\"",
 					"/Users/Brian/Desktop/JUCE/modules",
 					"/Users/Brian/Desktop/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
@@ -1148,7 +1124,6 @@
 				7E22FBFD0AA6B91065B874E8,
 				31F4629DDEAC5CBB76CEF491,
 				509AC1C6A3D81561EA42256D,
-				FBEE31765E42CD5FD2E0492E,
 				B047AD5B69075255A0E83D00,
 				1DF75E355768553F29FBE240,
 				5EC8C35EF2737FE726CE07B0,

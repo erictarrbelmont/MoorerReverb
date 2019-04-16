@@ -36,15 +36,19 @@ private:
     // access the processor object that created it.
     MoorerReverbAudioProcessor& processor;
 
-    HackAudio::Slider reverbTimeSlider;
-    HackAudio::Slider diffusionSlider;
-    HackAudio::Slider modulationSlider;
+    juce::Slider reverbTimeSlider;
+    juce::Slider diffusionSlider;
+    juce::Slider modulationSlider;
+    
+//    HackAudio::Slider reverbTimeSlider;
+//    HackAudio::Slider diffusionSlider;
+//    HackAudio::Slider modulationSlider;
     
     juce::Label reverbTimeLabel;
     juce::Label diffusionSliderLabel;
     juce::Label modulationSliderLabel;
     
-    HackAudio::FlexBox flexSliders;
+    juce::FlexBox flexSliders;
 
     
     int sliderSize = 80;
