@@ -11,8 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "APF.h"
-
+#include "MoorerReverb.h"
 
 //==============================================================================
 /**
@@ -57,9 +56,19 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
-private:
+    AudioProcessorValueTreeState& getState();
+    AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
+    AudioProcessorValueTreeState treeState;
+
+    AudioPlayHead* playHead;
+    AudioPlayHead::CurrentPositionInfo currentPositionInfo;
     
-    APF apf;
+    float* reverbTimeParameter = nullptr;
+    float* diffusionParameter  = nullptr;
+    float* modulationParameter = nullptr;
+    
+private:
+    MoorerReverb* thisMoorerReverb;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MoorerReverbAudioProcessor)
 };
