@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="BiQWqZ" name="MoorerReverb" projectType="audioplug" jucerVersion="5.4.1"
+<JUCERPROJECT id="BiQWqZ" name="MoorerReverb" projectType="audioplug" jucerVersion="5.4.3"
               pluginFormats="buildAU">
   <MAINGROUP id="y6Z3O0" name="MoorerReverb">
     <GROUP id="{2DE3CE20-9386-93BD-8EAD-6C9FDC702848}" name="Source">
@@ -16,6 +16,12 @@
       <FILE id="ffoo7W" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
       <FILE id="kK7SmJ" name="Delay.cpp" compile="1" resource="0" file="Source/Delay.cpp"/>
       <FILE id="dEbUlM" name="Delay.h" compile="0" resource="0" file="Source/Delay.h"/>
+      <FILE id="IDjNiR" name="APF.cpp" compile="1" resource="0" file="Source/APF.cpp"/>
+      <FILE id="VIOuGS" name="APF.h" compile="0" resource="0" file="Source/APF.h"/>
+      <FILE id="s7hTvn" name="FBCF.cpp" compile="1" resource="0" file="Source/FBCF.cpp"/>
+      <FILE id="KSEm0p" name="FBCF.h" compile="0" resource="0" file="Source/FBCF.h"/>
+      <FILE id="nsfAWb" name="EarlyReflections.h" compile="0" resource="0"
+            file="Source/EarlyReflections.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
