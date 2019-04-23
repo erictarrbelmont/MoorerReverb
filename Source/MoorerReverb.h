@@ -10,43 +10,33 @@
 
 #ifndef MoorerReverb_h
 #define MoorerReverb_h
-//#pragma once
 #include "APF.h"
 #include "FBCF.cpp"
+#include "EarlyReflections.h"
 
 class MoorerReverb {
     
 public:
     
-    MoorerReverb();
-
-    
     float processSample(float x, int channel);
     
-    void setReverbTime(float gain);
+    void setReverbTime(float rTime);
     
-    float getReverbTime();
-    
-    void setDiffusion(float samples);
-    
-    float getDiffusion();
+    void setDiffusion(float difValue);
     
     void setModulation(float samples);
     
-    float getModulation();
-    
     void setSamplingRate(int sampleRate);
     
-    int getSamplingRate();
-    
-    
+    void setModulation(float modValue);
+
     APF apf1;
     APF apf2;
     FBCF fbcf1;
     FBCF fbcf2;
     FBCF fbcf3;
     FBCF fbcf4;
-    //ER er1;
+    EarlyReflections er1;
     
     
 private:

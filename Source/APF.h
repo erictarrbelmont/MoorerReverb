@@ -26,7 +26,7 @@ public:
     void setFs(float Fs);
     float getFs();
     
-    void setDelaySamples(float delaySamples);
+    void setDelaySamples(int delaySamples);
     float getDelaySamples();
     
     void setDelayMs(float delayMs);

@@ -22,7 +22,7 @@ float getFs();
 void setGain(float ampdB);//float input needs to come from process block
 float getGain();
 
-void setDelaySamples(float d); //get delay from somewhere
+void setDelaySamples(int d); //get delay from somewhere
 float getDelaySamples();
 
 void setRate(float r);

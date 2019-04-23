@@ -76,7 +76,9 @@ public:
     }
     
     void FBCF::setDepth(float depth){
-        Depth = depth;
+       Depth = depth;
+        delay.setModAmp(depth);
+        
     }
     float FBCF::getDepth(){
         return Depth;
