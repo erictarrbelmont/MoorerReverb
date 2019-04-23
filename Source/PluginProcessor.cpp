@@ -21,13 +21,37 @@ MoorerReverbAudioProcessor::MoorerReverbAudioProcessor()
                       #endif
                        .withOutput ("Output", AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ),
 #endif
+treeState (*this, nullptr, Identifier ("MoorerParams"), createParameterLayout() )
 {
+    
+     thisMoorerReverb = new MoorerReverb();
+    
+    reverbTimeParameter = treeState.getRawParameterValue("reverbTime");
+    diffusionParameter = treeState.getRawParameterValue("diffusion");
+    modulationParameter = treeState.getRawParameterValue("modulation");
+    
 }
 
 MoorerReverbAudioProcessor::~MoorerReverbAudioProcessor()
 {
+    delete thisMoorerReverb;
+}
+
+AudioProcessorValueTreeState::ParameterLayout MoorerReverbAudioProcessor::createParameterLayout()
+{
+    std::vector <std::unique_ptr<RangedAudioParameter>> params;
+   auto reverbTimeParams = std::make_unique<AudioParameterFloat> ("reverbTime","ReverbTime", 0.2,0.9,0.7);
+    auto diffusionParams = std::make_unique<AudioParameterFloat> ("diffusion","Diffusion",0.2,0.9,0.7);
+    auto modulationParams = std::make_unique<AudioParameterFloat> ("modulation","Modulation", 0.2,0.9,0.7);
+
+    params.push_back(std::move(reverbTimeParams));
+    params.push_back(std::move(diffusionParams));
+    params.push_back(std::move(modulationParams));
+
+    return { params.begin(), params.end() };
+    
 }
 
 //==============================================================================
@@ -95,8 +119,7 @@ void MoorerReverbAudioProcessor::changeProgramName (int index, const String& new
 //==============================================================================
 void MoorerReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    thisMoorerReverb->setSamplingRate(getSampleRate());
 }
 
 void MoorerReverbAudioProcessor::releaseResources()
@@ -135,6 +158,13 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
+    
+    auto reverb = *reverbTimeParameter;
+    auto diffusion = *diffusionParameter;
+    auto modulation = *modulationParameter;
+    
+    
+    
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
     // guaranteed to be empty - they may contain garbage).
@@ -152,9 +182,17 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
     // interleaved by keeping the same state.
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
-        auto* channelData = buffer.getWritePointer (channel);
+        //auto* channelData = buffer.getWritePointer (channel);
+        for (int sample = 0; sample < buffer.getNumSamples(); ++sample){
+            
+            //TODO: Implement input params
+        //thisMoorerReverb->setDiffusion(diffusion);
+        //thisMoorerReverb->setReverbTime(reverb);
+        //thisMoorerReverb->setModulation(modulation);
+            
+        buffer.getWritePointer(channel)[sample] = thisMoorerReverb->processSample(buffer.getReadPointer(channel)[sample], channel);
 
-        // ..do something to the data...
+        }
     }
 }
 
@@ -172,6 +210,10 @@ AudioProcessorEditor* MoorerReverbAudioProcessor::createEditor()
 //==============================================================================
 void MoorerReverbAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
+    auto state = treeState.copyState();
+    std::unique_ptr<XmlElement> xml (state.createXml());
+    copyXmlToBinary (*xml, destData);
+    
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
@@ -179,6 +221,10 @@ void MoorerReverbAudioProcessor::getStateInformation (MemoryBlock& destData)
 
 void MoorerReverbAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
+    std::unique_ptr<XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
+    if (xmlState.get() != nullptr)
+        if (xmlState->hasTagName (treeState.state.getType()))
+            treeState.replaceState (ValueTree::fromXml (*xmlState));
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
 }
