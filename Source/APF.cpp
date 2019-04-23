@@ -32,7 +32,7 @@ float APF::getFs(){
     return Fs;
 };
 
-void APF::setDelaySamples(float delaySamples){
+void APF::setDelaySamples(int delaySamples){
     this->delaySamples = delaySamples;
     delay.setDelaySamples(delaySamples);
 };
