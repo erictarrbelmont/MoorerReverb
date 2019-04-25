@@ -36,17 +36,17 @@ public:
     
     float processSample(float x, int channel){
         y = 0.0f;
-       delayBuffer[index][channel] = x;
+       delayBuffer[index[channel]][channel] = x;
        for (int n = 0; n < 18; ++n){
-           int circularIndex = index + tapTimes[n];
+           int circularIndex = index[channel] + tapTimes[n];
            if (circularIndex >= 3520){
                circularIndex = circularIndex - 3520;
            }    
            y += tapGains[n] * delayBuffer[circularIndex][channel];
         }
-        ++index;
-        if (index >= 3520){
-            index = index - 3520;
+        ++index[channel];
+        if (index[channel] >= 3520){
+            index[channel] = index[channel] - 3520;
         }
        return y;
     }
@@ -67,7 +67,7 @@ private:
 
                                               
     float delayBuffer[3520][2] = {0.0f};
-    int index = 0;
+    int index[2] = {0};
 };
 
 

@@ -14,34 +14,32 @@
 float Delay::processSample(float x, int channel){
     float y = 0;
     
-    float lfo = amp * sinf(currentAngle) + offset;
-    updateAngle();
+    float lfo = amp * sinf(currentAngle[channel]) + offset;
+    updateAngle(channel);
     
     float d1 = floorf(delay + lfo);
     float d2 = d1 + 1.0f;
     float g2 = delay + lfo - d1;
     float g1 = 1.0f - g2;
     
-    int indexD1 = index - d1;
+    int indexD1 = index[channel] - d1;
     if (indexD1 < 0){
         indexD1 += maxBufferSize;
     }
     
-    int indexD2 = index - d2;
+    int indexD2 = index[channel] - d2;
     if (indexD2 < 0){
         indexD2 += maxBufferSize;
     }
     
     y= g1 * delayBuffer[indexD1][channel] + g2 * delayBuffer[indexD2][channel];
     
-    delayBuffer[index][channel] = x;
-    if (index <= maxBufferSize - 2){
-        if (channel == 1){
-            index++;
-        }
+    delayBuffer[index[channel]][channel] = x;
+    if (index[channel] <= maxBufferSize - 2){
+            index[channel]++;
     }
     else{
-        index = 0;
+        index[channel] = 0;
     }
     return y; 
 }
@@ -88,10 +86,10 @@ float Delay::getFreqLFO(){
     return freqLFO;
 };
 
-void Delay::updateAngle(){
-    currentAngle += angleChange;
-    if (currentAngle > 2 * M_PI){
-        currentAngle -= (2*M_PI);
+void Delay::updateAngle(int channel){
+    currentAngle[channel] += angleChange;
+    if (currentAngle[channel] > 2 * M_PI){
+        currentAngle[channel] -= (2*M_PI);
     }
 }
 

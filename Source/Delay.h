@@ -40,8 +40,8 @@ public:
     
     float lfo();
     
-    void updateAngle();
-    float currentAngle = {0.0f};
+    
+    
     
     
     
@@ -54,7 +54,7 @@ private:
     float Fs = 48000.f;
     float offset = 0.0f;
     float angleChange = 0.0f;
-    int index = 0;
+    int index[2] = {0};
     float delay=0.0f;
 
     float amp = 0.0f;
@@ -62,8 +62,8 @@ private:
     float freqLFO=0.0f;
     float sinSynth();
     
-    
-    
+    float currentAngle[2] = {0.0f};
+    void updateAngle(int channel);
 };
 
 #endif /* Delay_h */
