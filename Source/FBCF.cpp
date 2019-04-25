@@ -6,35 +6,30 @@
 //
 
 #include "FBCF.h"
-class FBCF {
-    
-public:
-    
-    FBCF(){};
-    ~FBCF(){};
+
     
     // Functions for Compressor
     float FBCF::processSample(float x,int channel){
     
-    float w=x+-g*y1;
+    float w=x+ (-gain)*y1[channel];
     //y(n)=x(n)-g*y(n - delay) use this for difference equation for FBCF
         //delay.processSample(w);
-        y1=delay.processSample(w);
-        return y1;
+        y1[channel]=delay.processSample(w,channel);
+        return y1[channel];
     }
-    void FBCF::setFs(int Fs){
+
+    void FBCF::setFs(float Fs){
         // Code to check for valid sampling rate
         if (Fs == 44100 || Fs==48000 ||Fs==88200||Fs==96000||Fs==192000) {
             
             this->Fs = Fs;
-            
+            delay.setFs(Fs);
         }
     }
     
     
     
     float FBCF::getFs(){
-        
         return Fs;
     };
     
@@ -45,7 +40,6 @@ public:
                 gain = g;
             }
         }
-        
     };
     
     
@@ -55,45 +49,30 @@ public:
     };
     
     
-    void FBCF::setDelaySamples(float d){
+    void FBCF::setDelaySamples(int d){
         if (d <= maxBufferSize || d >= 0.0f){
             delayTime = d;
             delay.setDelaySamples(d);
         }
     };
     
-    float FBCF::getDelaySamples(){
-        return delay;
+    int FBCF::getDelaySamples(){
+        return delayTime;
     };
     
     void FBCF::setRate(float r){
         rate = r;
-        
-    }
+        delay.setFreqLFO(rate);
+    };
     float FBCF::getRate(){
         return rate;
-        
-    }
+    };
     
     void FBCF::setDepth(float depth){
-       Depth = depth;
+      this->depth = depth;
         delay.setModAmp(depth);
         
     }
     float FBCF::getDepth(){
-        return Depth;
+        return depth;
     }
-    
-private:
-    
-    
-    
-    
-
-  
-    
-    
-};
-
-
-#endif

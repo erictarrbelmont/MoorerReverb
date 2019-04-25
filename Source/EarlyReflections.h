@@ -16,7 +16,7 @@ class EarlyReflections {
     
   
 public:
-    void setFs(){
+    void setFs(int Fs){
         if (Fs == 44100||Fs == 48000||Fs == 88200||Fs == 96000||Fs == 192000){
         this->Fs = Fs;
         }
@@ -35,13 +35,18 @@ public:
     }
     
     float processSample(float x, int channel){
+        y = 0.0f;
        delayBuffer[index][channel] = x;
        for (int n = 0; n < 18; ++n){
-           y += tapGains[n] * delayBuffer[index + tapTimes[n]][channel];
-            if (n >= 18){
-                n = 0;
-            }
-           ++index;
+           int circularIndex = index + tapTimes[n];
+           if (circularIndex >= 3520){
+               circularIndex = circularIndex - 3520;
+           }    
+           y += tapGains[n] * delayBuffer[circularIndex][channel];
+        }
+        ++index;
+        if (index >= 3520){
+            index = index - 3520;
         }
        return y;
     }
@@ -61,7 +66,7 @@ private:
     float tapGains[18] = {.841,.504,.49,.379,.38,.346,.289,.272,.192,.193,.217,.181,.18,.181,.176,.142,.167,.134};
 
                                               
-    int delayBuffer[3520][2] = {0};
+    float delayBuffer[3520][2] = {0.0f};
     int index = 0;
 };
 

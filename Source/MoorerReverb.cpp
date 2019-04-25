@@ -1,4 +1,4 @@
-/*
+ /*
   ==============================================================================
 
     MoorerReverb.cpp
@@ -60,7 +60,7 @@ float MoorerReverb::processSample(float x, int channel){
     float x4 = fbcf4.processSample(x,channel);
     
     // Sum the FBCFs together
-    x = x1 + x2 + x3 + x4;
+    x = (x1 + x2 + x3 + x4)*0.5f;
     
     // Send processed input into APFs
     x = apf1.processSample(x, channel);
@@ -71,19 +71,36 @@ float MoorerReverb::processSample(float x, int channel){
     return y;
 };
 
+void MoorerReverb::setSamplingRate(int Fs){
+    this->Fs = Fs;
+    er1.setFs(Fs);
+    fbcf1.setFs(Fs);
+    fbcf2.setFs(Fs);
+    fbcf3.setFs(Fs);
+    fbcf4.setFs(Fs);
+    apf1.setFs(Fs);
+    apf2.setFs(Fs);
+};
+
+
 void MoorerReverb::setReverbTime(float gain){
-    fbcf1.setGain(gain + 0.06);
-    fbcf2.setGain(gain - 0.07);
+    fbcf1.setGain(gain);
+    fbcf2.setGain(gain);
     fbcf3.setGain(gain);
-    fbcf4.setGain(gain - .04);
-    apf1.setGain(gain -.01);
-    apf2.setGain(gain -.03);
+    fbcf4.setGain(gain);
+    
 }
 
 void MoorerReverb::setDiffusion(float difValue){
-    int delay = 60 + difValue*420;
-    apf1.setDelaySamples(delay);
-    apf2.setDelaySamples(delay/3);
+    if (difValue > 0.99){
+        difValue = 0.99;
+    }
+    if (difValue < 0.1){
+        difValue = 0.1;
+    }
+    apf1.setGain(difValue -.01);
+    apf2.setGain(difValue -.03);
+
 };
 
 

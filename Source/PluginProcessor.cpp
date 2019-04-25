@@ -179,15 +179,15 @@ void MoorerReverbAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiB
     thisMoorerReverb->setReverbTime(reverb);
     thisMoorerReverb->setModulation(modulation);
     
-    
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        //auto* channelData = buffer.getWritePointer (channel);
-        for (int sample = 0; sample < buffer.getNumSamples(); ++sample){
+    //auto* channelData = buffer.getWritePointer (channel);
+    for (int sample = 0; sample < buffer.getNumSamples(); ++sample){
+        for (int channel = 0; channel < totalNumInputChannels; ++channel)
+        {
+       
             
+            float x = buffer.getReadPointer(channel)[sample];
             
-            
-        buffer.getWritePointer(channel)[sample] = thisMoorerReverb->processSample(buffer.getReadPointer(channel)[sample], channel);
+            buffer.getWritePointer(channel)[sample] = thisMoorerReverb->processSample(x, channel);
 
         }
     }

@@ -11,20 +11,19 @@
 #ifndef MoorerReverb_h
 #define MoorerReverb_h
 #include "APF.h"
-#include "FBCF.cpp"
+#include "FBCF.h"
 #include "EarlyReflections.h"
 
 class MoorerReverb {
     
 public:
+    MoorerReverb();
     
     float processSample(float x, int channel);
     
     void setReverbTime(float rTime);
     
     void setDiffusion(float difValue);
-    
-    void setModulation(float samples);
     
     void setSamplingRate(int sampleRate);
     
@@ -40,6 +39,6 @@ public:
     
     
 private:
-    
+    int Fs = 48000;
 };
 #endif

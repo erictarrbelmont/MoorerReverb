@@ -59,10 +59,10 @@ float APF::getGain(){
 };
 
 void APF::setModAmp(float m){
-    delay.amp = m;
+    delay.setModAmp(m);
 };
 
 void APF::setFreqLFO(float f){
-    delay.freqLFO = f;
+    delay.setFreqLFO(f);
 };
 

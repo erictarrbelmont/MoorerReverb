@@ -44,10 +44,7 @@ public:
     float currentAngle = {0.0f};
     
     
-    float amp = 0.0f;
-    float modAmp=0.0f;
-    float freqLFO=0.0f;
-    float sinSynth();
+    
     
     
 private:
@@ -60,7 +57,10 @@ private:
     int index = 0;
     float delay=0.0f;
 
-    
+    float amp = 0.0f;
+    float modAmp=0.0f;
+    float freqLFO=0.0f;
+    float sinSynth();
     
     
     

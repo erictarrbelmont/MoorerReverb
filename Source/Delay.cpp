@@ -18,8 +18,8 @@ float Delay::processSample(float x, int channel){
     updateAngle();
     
     float d1 = floorf(delay + lfo);
-    float d2 = d1 + 1;
-    float g2 = delay - d1;
+    float d2 = d1 + 1.0f;
+    float g2 = delay + lfo - d1;
     float g1 = 1.0f - g2;
     
     int indexD1 = index - d1;
@@ -36,11 +36,14 @@ float Delay::processSample(float x, int channel){
     
     delayBuffer[index][channel] = x;
     if (index <= maxBufferSize - 2){
-        index++;
+        if (channel == 1){
+            index++;
+        }
     }
     else{
         index = 0;
     }
+    return y; 
 }
 
 void Delay::setFs(int Fs){
@@ -66,7 +69,7 @@ float Delay::getDelaySamples(){
 void Delay::setModAmp(float m){
     if (m <= 10.0f || m >= 0.0f){
         amp = m;
-        offset = amp;
+        offset = amp+1;
     }
 };
 
